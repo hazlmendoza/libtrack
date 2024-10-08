@@ -2,10 +2,14 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        defaultfont: ["Inter", "monospace"],
+      },
+      colors: {
+        red: '#910203', 
+      },
+    },
   },
-  plugins: [
-    require('tailwindcss'),
-    require('autoprefixer'),
-  ],
+  plugins: [require("tailwindcss"), require("autoprefixer")],
 };
