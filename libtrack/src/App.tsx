@@ -6,7 +6,7 @@ import arrowDownAsset from "./assets/private/arrow-down.png";
 function App() {
   return (
     <div
-      className="flex flex-col h-screen bg-fixed bg-cover bg-center"
+      className="flex flex-col h-screen bg-red bg-fixed bg-cover bg-center"
       style={{ backgroundImage: `url(${bgAsset})` }}
     >
       <div className="flex-grow flex flex-col items-center justify-center">
@@ -30,8 +30,8 @@ function App() {
           <p className="text-6xl font-bold">10:53:06 PM</p>
         </div>
       </div>
-      <footer className="bg-white w-full">
-        <div className="flex flex-col items-center justify-center rounded-t-full py-4">
+      <footer className="w-full">
+        <div className="bg-white flex flex-col items-center justify-center rounded-t-full py-4">
           <p className="text-4xl font-semibold">
             TAP YOUR <span className="font-bold">LIBRARY CARD</span> HERE
           </p>
