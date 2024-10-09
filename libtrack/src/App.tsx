@@ -1,12 +1,14 @@
 import bgAsset from "./assets/public/background-pup.png";
 import puplogo from "./assets/public/pup-logo.png";
 import bookAsset from "./assets/public/student-book.png";
-import arrowDownAsset from "./assets/private/arrow-down.png";
+import Button from "./Components/Button";
+import TapCard from "./pages/public/common/TapCardModal";
+
 
 function App() {
   return (
     <div
-      className="flex flex-col h-screen bg-red bg-fixed bg-cover bg-center"
+      className="flex flex-col justify-center items-center h-screen bg-red bg-fixed bg-cover bg-center"
       style={{ backgroundImage: `url(${bgAsset})` }}
     >
       <div className="flex-grow flex flex-col items-center justify-center">
@@ -21,7 +23,7 @@ function App() {
         </div>
         <div className="mb-4 flex flex-col items-center justify-center">
           <p className="text-white text-xl font-bold">STUDENTS INSIDE:</p>
-          <div className="bg-white rounded-full mt-3 w-1/6 py-1.5 flex items-center justify-center">
+          <div className="bg-white rounded-full mt-3 w-32 py-1.5 flex items-center justify-center">
             <p className="text-3xl font-bold">45</p>
           </div>
         </div>
@@ -30,14 +32,10 @@ function App() {
           <p className="text-6xl font-bold">10:53:06 PM</p>
         </div>
       </div>
-      <footer className="w-full">
-        <div className="bg-white flex flex-col items-center justify-center rounded-t-full py-4">
-          <p className="text-4xl font-semibold">
-            TAP YOUR <span className="font-bold">LIBRARY CARD</span> HERE
-          </p>
-          <img src={arrowDownAsset} alt="Arrow Down" className="w-16" />
-        </div>
-      </footer>
+      <Button variant="default" onClick={() => alert("Default Button Clicked")}>Default Button</Button>
+      <Button variant="outline" onClick={() => alert("Default Button Clicked")}>Default Button</Button>
+      <Button variant="destructive" onClick={() => alert("Default Button Clicked")}>Default Button</Button>
+      <TapCard></TapCard>
     </div>
   );
 }
