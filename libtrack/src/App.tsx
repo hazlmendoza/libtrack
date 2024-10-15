@@ -1,42 +1,68 @@
+// import { useEffect, useState } from "react";
 import bgAsset from "./assets/public/background-pup.png";
 import puplogo from "./assets/public/pup-logo.png";
 import bookAsset from "./assets/public/student-book.png";
-import Button from "./Components/Button";
 import TapCard from "./pages/public/common/TapCardModal";
 
-
 function App() {
+  // const [isLandscape, setIsLandscape] = useState(window.innerHeight < window.innerWidth);
+
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setIsLandscape(window.innerHeight < window.innerWidth);
+  //   };
+
+  //   window.addEventListener('resize', handleResize);
+
+  //   // Cleanup event listener on component unmount
+  //   return () => {
+  //     window.removeEventListener('resize', handleResize);
+  //   };
+  // }, []);
+
   return (
-    <div
-      className="flex flex-col justify-center items-center h-screen bg-red bg-fixed bg-cover bg-center"
-      style={{ backgroundImage: `url(${bgAsset})` }}
-    >
-      <div className="flex-grow flex flex-col items-center justify-center">
-        <div className="py-4"></div>
-        <div className="flex flex-col items-center justify-center">
-          <img src={puplogo} alt="PUP Logo" className="w-40 h-auto py-6" />
-          <p className="text-white text-2xl font-bold">MABUHAY,</p>
-          <p className="text-white text-2xl font-bold">ISKOLAR NG BAYAN!</p>
+    <>
+      <div
+        className={`font-defaultfont place-items-center grid-rows-[1fr_auto_1fr] grid grid-cols-1
+           w-screen h-screen bg-red bg-fixed bg-cover bg-center`}
+        style={{ backgroundImage: `url(${bgAsset})` }}
+      >
+        <div className="my-6 w-20 h-auto md:w-40 md:my-8 lg:w-80 lg:my-20">
+          <img src={puplogo} alt="PUP Logo" className="w-full h-auto" />
         </div>
-        <div className="flex flex-col items-center justify-center">
-          <img src={bookAsset} alt="Book" className="w-56 h-auto" />
-        </div>
-        <div className="mb-4 flex flex-col items-center justify-center">
-          <p className="text-white text-xl font-bold">STUDENTS INSIDE:</p>
-          <div className="bg-white rounded-full mt-3 w-32 py-1.5 flex items-center justify-center">
-            <p className="text-3xl font-bold">45</p>
+
+        <div className="flex-grow flex flex-col items-center justify-between">
+          <div className="flex flex-col items-center text-white text-base font-bold md:text-3xl lg:text-6xl">
+            <p>MABUHAY,</p>
+            <p>ISKOLAR NG BAYAN!</p>
+          </div>
+          <img
+            src={bookAsset}
+            alt="Book"
+            className="my-2 w-64 h-auto md:w-8/12 lg:w-9/12"
+          />
+
+          <div className="w-full flex flex-col items-center justify-center">
+            <p className="text-sm text-white font-bold md:text-2xl lg:text-4xl">
+              STUDENTS INSIDE:
+            </p>
+            <div className="bg-white rounded-full w-full  flex items-center justify-center text-lg font-bold md:text-4xl md:w-6/12 md:py:2 lg:text-7xl lg:w-8/12 lg:mt-6">
+              <p>45</p>
+            </div>
           </div>
         </div>
-        <div className="mb-9 flex flex-col items-center justify-center text-white">
-          <p className="text-2xl font-bold">December 4, 2024</p>
-          <p className="text-6xl font-bold">10:53:06 PM</p>
+        <div className="flex flex-grow flex-col items-center justify-center text-white">
+          <p className="text-xl font-bold md:text-3xl lg:text-6xl">
+            December 4, 2024
+          </p>
+          <p className="text-5xl font-bold md:text-7xl lg:text-[150px]">
+            10:53:06 PM
+          </p>
         </div>
+        <TapCard></TapCard>
       </div>
-      <Button variant="default" onClick={() => alert("Default Button Clicked")}>Default Button</Button>
-      <Button variant="outline" onClick={() => alert("Default Button Clicked")}>Default Button</Button>
-      <Button variant="destructive" onClick={() => alert("Default Button Clicked")}>Default Button</Button>
-      <TapCard></TapCard>
-    </div>
+      
+    </>
   );
 }
 
